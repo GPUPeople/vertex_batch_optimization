@@ -1,0 +1,211 @@
+
+
+
+#ifndef INCLUDED_CORE_ITERATORS_TRANSFORM_ITERATOR
+#define INCLUDED_CORE_ITERATORS_TRANSFORM_ITERATOR
+
+#pragma once
+
+#include <utility>
+#include <iterator>
+
+
+namespace core
+{
+	namespace iterators
+	{
+		template <typename Iterator, typename F>
+		class transform_iterator
+		{
+			Iterator it;
+			F f;
+
+		public:
+			using difference_type = typename std::iterator_traits<Iterator>::difference_type;
+			using value_type = decltype(f(*std::declval<Iterator>()));
+			using pointer = value_type*;
+			using reference = value_type&;
+			using iterator_category = typename std::iterator_traits<Iterator>::iterator_category;
+
+			transform_iterator() = default;
+
+			transform_iterator(Iterator it, F&& f) noexcept(noexcept(Iterator(it)))
+				: it(it), f(std::move(f))
+			{
+			}
+
+			transform_iterator(Iterator it, const F& f) noexcept(noexcept(Iterator(it)))
+				: it(it), f(f)
+			{
+			}
+
+			decltype(auto) operator *() const noexcept(noexcept(f(*it))) { return f(*it); }
+			decltype(auto) operator *() noexcept(noexcept(f(*it))) { return f(*it); }
+
+			decltype(auto) operator ->() const noexcept(noexcept(f(*it).operator->())) { return f(*it).operator->(); }
+			decltype(auto) operator ->() noexcept(noexcept(f(*it).operator->())) { return f(*it).operator->(); }
+
+			decltype(auto) operator [](difference_type i) const noexcept(noexcept(f(it[i]))) { return f(it[i]); }
+			decltype(auto) operator [](difference_type i) noexcept(noexcept(f(it[i]))) { return f(it[i]); }
+
+			friend transform_iterator& operator ++(transform_iterator& me) noexcept(noexcept(++me.it))
+			{
+				++me.it;
+				return me;
+			}
+
+			friend transform_iterator operator ++(transform_iterator me, int) noexcept(noexcept(++me))
+			{
+				return ++me;
+			}
+
+			friend transform_iterator& operator +=(transform_iterator& me, difference_type n) noexcept(noexcept(me.it += n))
+			{
+				me.it += n;
+				return me;
+			}
+
+			friend transform_iterator& operator --(transform_iterator& me) noexcept(noexcept(--me.it))
+			{
+				--me.it;
+				return me;
+			}
+
+			friend transform_iterator operator --(transform_iterator me, int) noexcept(noexcept(--me))
+			{
+				return --me;
+			}
+
+			friend transform_iterator& operator -=(transform_iterator& me, difference_type n) noexcept(noexcept(me.it -= n))
+			{
+				me.it -= n;
+				return me;
+			}
+
+			friend transform_iterator operator +(transform_iterator a, difference_type n) noexcept(noexcept(a.it + n))
+			{
+				a.it = a.it + n;
+				return a;
+			}
+
+			friend transform_iterator operator +(difference_type n, transform_iterator a) noexcept(noexcept(n + a.it))
+			{
+				a.it = n + a.it;
+				return a;
+			}
+
+			friend transform_iterator operator -(transform_iterator a, difference_type n) noexcept(noexcept(a.it - n))
+			{
+				a.it = a.it - n;
+				return a;
+			}
+
+			friend auto operator -(const transform_iterator& a, const transform_iterator& b) noexcept(noexcept(a.it - b.it))
+			{
+				return a.it - b.it;
+			}
+
+			friend auto operator -(const transform_iterator& a, const Iterator& b) noexcept(noexcept(a.it - b))
+			{
+				return a.it - b;
+			}
+
+			friend auto operator -(const Iterator& a, const transform_iterator& b) noexcept(noexcept(a - b.it))
+			{
+				return a - b.it;
+			}
+
+			friend bool operator ==(const transform_iterator& a, const transform_iterator& b) noexcept(noexcept(a.it == b.it))
+			{
+				return a.it == b.it;
+			}
+
+			friend bool operator ==(const transform_iterator& a, const Iterator& b) noexcept(noexcept(a.it == b))
+			{
+				return a.it == b;
+			}
+
+			friend bool operator ==(const Iterator& a, const transform_iterator& b) noexcept(noexcept(a == b.it))
+			{
+				return a == b.it;
+			}
+
+			friend bool operator !=(const transform_iterator& a, const transform_iterator& b) noexcept(noexcept(a.it != b.it))
+			{
+				return a.it != b.it;
+			}
+
+			friend bool operator !=(const transform_iterator& a, const Iterator& b) noexcept(noexcept(a.it != b))
+			{
+				return a.it != b;
+			}
+
+			friend bool operator !=(const Iterator& a, const transform_iterator& b) noexcept(noexcept(a != b.it))
+			{
+				return a != b.it;
+			}
+
+			friend bool operator <(const transform_iterator& a, const transform_iterator& b) noexcept(noexcept(a.it < b.it))
+			{
+				return a.it < b.it;
+			}
+
+			friend bool operator <(const transform_iterator& a, const Iterator& b) noexcept(noexcept(a.it < b))
+			{
+				return a.it < b;
+			}
+
+			friend bool operator <(const Iterator& a, const transform_iterator& b) noexcept(noexcept(a < b.it))
+			{
+				return a < b.it;
+			}
+
+			friend bool operator <=(const transform_iterator& a, const transform_iterator& b) noexcept(noexcept(a.it <= b.it))
+			{
+				return a.it <= b.it;
+			}
+
+			friend bool operator <=(const transform_iterator& a, const Iterator& b) noexcept(noexcept(a.it <= b))
+			{
+				return a.it <= b;
+			}
+
+			friend bool operator <=(const Iterator& a, const transform_iterator& b) noexcept(noexcept(a <= b.it))
+			{
+				return a <= b.it;
+			}
+
+			friend bool operator >(const transform_iterator& a, const transform_iterator& b) noexcept(noexcept(a.it > b.it))
+			{
+				return a.it > b.it;
+			}
+
+			friend bool operator >(const transform_iterator& a, const Iterator& b) noexcept(noexcept(a.it > b))
+			{
+				return a.it > b;
+			}
+
+			friend bool operator >(const Iterator& a, const transform_iterator& b) noexcept(noexcept(a > b.it))
+			{
+				return a > b.it;
+			}
+
+			friend bool operator >=(const transform_iterator& a, const transform_iterator& b) noexcept(noexcept(a.it >= b.it))
+			{
+				return a.it >= b.it;
+			}
+
+			friend bool operator >=(const transform_iterator& a, const Iterator& b) noexcept(noexcept(a.it >= b))
+			{
+				return a.it >= b;
+			}
+
+			friend bool operator >=(const Iterator& a, const transform_iterator& b) noexcept(noexcept(a >= b.it))
+			{
+				return a >= b.it;
+			}
+		};
+	}
+}
+
+#endif  // INCLUDED_CORE_ITERATORS_TRANSFORM_ITERATOR

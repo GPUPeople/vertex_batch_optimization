@@ -1,0 +1,192 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="..\..\source\main.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\Scene.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\cmd_args.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\SceneProcessor.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\layers\ModifiedTomFOptimizer.cpp">
+      <Filter>source\layers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\layers\Randi.cpp">
+      <Filter>source\layers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\layers\TomFOptimizer.cpp">
+      <Filter>source\layers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\layers\VertexCacheSimulation.cpp">
+      <Filter>source\layers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\layers\VertexReuseStats.cpp">
+      <Filter>source\layers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\layers\WeldVertices.cpp">
+      <Filter>source\layers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\layers\BatchOptimizer.cpp">
+      <Filter>source\layers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\layers\HoppeOptimizer.cpp">
+      <Filter>source\layers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\file_formats\binscene.cpp">
+      <Filter>source\formats</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\file_formats\obj.cpp">
+      <Filter>source\formats</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\file_formats\sdkmesh.cpp">
+      <Filter>source\formats</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\file_formats\tris.cpp">
+      <Filter>source\formats</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\file_formats\candy_scene.cpp">
+      <Filter>source\formats</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\layers\ZFlip.cpp">
+      <Filter>source\layers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\layers\WindingOrderFlip.cpp">
+      <Filter>source\layers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\layers\LinYuOptimizer.cpp">
+      <Filter>source\layers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\layers\TipsifyOptimizer.cpp">
+      <Filter>source\layers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\layers\BatchEnumerator.cpp">
+      <Filter>source\layers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\layers\GBatchOptimizer.cpp">
+      <Filter>source\layers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\layers\Timing.cpp">
+      <Filter>source\layers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\layers\UnweldVertices.cpp">
+      <Filter>source\layers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\layers\CentralVertexCacheSimulation.cpp">
+      <Filter>source\layers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\layers\LRUVertexCacheSimulation.cpp">
+      <Filter>source\layers</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\source\Scene.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\SceneBuilder.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\ProcessingLayer.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\cmd_args.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\SceneProcessor.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\io.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\layers\HoppeOptimizer.h">
+      <Filter>source\layers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\layers\ModifiedTomFOptimizer.h">
+      <Filter>source\layers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\layers\Randi.h">
+      <Filter>source\layers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\layers\TomFOptimizer.h">
+      <Filter>source\layers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\layers\VertexCacheSimulation.h">
+      <Filter>source\layers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\layers\VertexReuseStats.h">
+      <Filter>source\layers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\layers\WeldVertices.h">
+      <Filter>source\layers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\layers\BatchOptimizer.h">
+      <Filter>source\layers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\file_formats\binscene.h">
+      <Filter>source\formats</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\file_formats\candy_scene.h">
+      <Filter>source\formats</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\file_formats\obj.h">
+      <Filter>source\formats</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\file_formats\sdkmesh.h">
+      <Filter>source\formats</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\file_formats\tris.h">
+      <Filter>source\formats</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\layers\ZFlip.h">
+      <Filter>source\layers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\layers\WindingOrderFlip.h">
+      <Filter>source\layers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\layers\LinYuOptimizer.h">
+      <Filter>source\layers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\layers\TipsifyOptimizer.h">
+      <Filter>source\layers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\layers\BatchEnumerator.h">
+      <Filter>source\layers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\layers\GBatchOptimizer.h">
+      <Filter>source\layers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\layers\Timing.h">
+      <Filter>source\layers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\layers\UnweldVertices.h">
+      <Filter>source\layers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\layers\CentralVertexCacheSimulation.h">
+      <Filter>source\layers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\layers\LRUVertexCacheSimulation.h">
+      <Filter>source\layers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\layers\BatchSimulator.h">
+      <Filter>source\layers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\layers\BatchSimulationParameters.h">
+      <Filter>source\layers</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="source">
+      <UniqueIdentifier>{02255060-6748-4c3c-a4ed-84e162a3b9d8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\layers">
+      <UniqueIdentifier>{70e6ae79-3b34-4eba-a340-9a7e8c6b5ff6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\formats">
+      <UniqueIdentifier>{b0855111-e360-475c-9911-3a81a863d5df}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

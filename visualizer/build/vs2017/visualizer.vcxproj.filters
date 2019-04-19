@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="source">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="source\GLSL">
+      <UniqueIdentifier>{3300ccab-54ad-4f9c-a5d2-8738a859cdd3}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\source\PerspectiveCamera.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\main.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\OrbitalNavigator.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\GeometryViz.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\Visualizer.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\Display.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\TriOrderCurve.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\argparse.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\InvocationChecker.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\BatchSilhouette.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\source\PerspectiveCamera.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\Camera.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\OrbitalNavigator.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\Navigator.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\GeometryViz.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\GLSL\camera.glsl.h">
+      <Filter>source\GLSL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\Visualizer.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\Display.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\TriOrderCurve.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\Geometry.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\argparse.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\BatchSilhouette.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\InvocationChecker.h">
+      <Filter>source</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <GLSL Include="..\..\source\GLSL\geometry_vertex_color.fs.glsl">
+      <Filter>source\GLSL</Filter>
+    </GLSL>
+    <GLSL Include="..\..\source\GLSL\projected_geometry.vs.glsl">
+      <Filter>source\GLSL</Filter>
+    </GLSL>
+    <GLSL Include="..\..\source\GLSL\color.fs.glsl">
+      <Filter>source\GLSL</Filter>
+    </GLSL>
+    <GLSL Include="..\..\source\GLSL\geometry.fs.glsl">
+      <Filter>source\GLSL</Filter>
+    </GLSL>
+    <GLSL Include="..\..\source\GLSL\geometry.vs.glsl">
+      <Filter>source\GLSL</Filter>
+    </GLSL>
+    <GLSL Include="..\..\source\GLSL\geometry_show_invocations.vs.glsl">
+      <Filter>source\GLSL</Filter>
+    </GLSL>
+    <GLSL Include="..\..\source\GLSL\geometry_show_order.fs.glsl">
+      <Filter>source\GLSL</Filter>
+    </GLSL>
+    <GLSL Include="..\..\source\GLSL\geometry_show_batches.fs.glsl">
+      <Filter>source\GLSL</Filter>
+    </GLSL>
+    <GLSL Include="..\..\source\GLSL\invocation_counter.vs.glsl">
+      <Filter>source\GLSL</Filter>
+    </GLSL>
+    <GLSL Include="..\..\source\GLSL\invocation_counter.fs.glsl">
+      <Filter>source\GLSL</Filter>
+    </GLSL>
+    <GLSL Include="..\..\source\GLSL\invocation_counter.gs.glsl">
+      <Filter>source\GLSL</Filter>
+    </GLSL>
+  </ItemGroup>
+</Project>

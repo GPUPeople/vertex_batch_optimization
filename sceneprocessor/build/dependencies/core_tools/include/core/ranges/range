@@ -1,0 +1,43 @@
+
+
+
+#ifndef INCLUDED_CORE_RANGES_RANGE
+#define INCLUDED_CORE_RANGES_RANGE
+
+#pragma once
+
+
+namespace core
+{
+	namespace ranges
+	{
+		template <typename Begin, typename End>
+		struct range_t
+		{
+			Begin b;
+			End e;
+
+			friend const Begin begin(const range_t& r)
+			{
+				return r.b;
+			}
+
+			friend Begin begin(range_t& r)
+			{
+				return r.b;
+			}
+
+			friend const End end(const range_t& r)
+			{
+				return r.e;
+			}
+
+			friend End end(range_t& r)
+			{
+				return r.e;
+			}
+		};
+	}
+}
+
+#endif  // INCLUDED_CORE_RANGES_RANGE

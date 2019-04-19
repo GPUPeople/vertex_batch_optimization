@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{45B1AD14-3310-42B0-A472-EC8E0530ECEF}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>visualizer</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup>
+    <Import Project="..\dependencies\dependencies.props" />
+  </ImportGroup>
+  <ImportGroup Label="ExtensionSettings">
+    <Import Project="$(GLSL_build_tools_root)GLSL.props" />
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup>
+    <Import Project="$(core_tools_root)build\vs2017\core_tools.props" Condition="'$(core_tools)' == ''" />
+    <Import Project="$(math_root)build\vs\math.props" Condition="'$(math)' == ''" />
+    <Import Project="$(config_tools_root)build\vs2017\config_tools.props" Condition="'$(config_tools)' == ''" />
+    <Import Project="$(image_tools_root)build\vs2017\image_tools.props" Condition="'$(image_tools)' == ''" />
+    <Import Project="$(GL_core_tools_root)build\vs2017\GL_core_tools.props" Condition="'$(GL_core_tools)' == ''" />
+    <Import Project="$(GL_platform_tools_root)build\vs2017\GL_platform_tools.props" Condition="'$(GL_platform_tools)' == ''" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)bin\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>build\$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)bin\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>build\$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>GLCORE_STATIC;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MinimalRebuild>false</MinimalRebuild>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
+      <DiagnosticsFormat>Caret</DiagnosticsFormat>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <AdditionalDependencies>config_tools-MDd.lib;image_tools-MDd.lib;GL_core_tools-glcore-MDd.lib;GL_platform_tools-glcore-MDd.lib;glcore-MDd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>GLCORE_STATIC;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
+      <DiagnosticsFormat>Caret</DiagnosticsFormat>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <AdditionalDependencies>config_tools-MD.lib;image_tools-MD.lib;GL_core_tools-glcore-MD.lib;GL_platform_tools-glcore-MD.lib;glcore-MD.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\source\argparse.cpp" />
+    <ClCompile Include="..\..\source\BatchSilhouette.cpp" />
+    <ClCompile Include="..\..\source\Display.cpp" />
+    <ClCompile Include="..\..\source\GeometryViz.cpp" />
+    <ClCompile Include="..\..\source\InvocationChecker.cpp" />
+    <ClCompile Include="..\..\source\main.cpp" />
+    <ClCompile Include="..\..\source\OrbitalNavigator.cpp" />
+    <ClCompile Include="..\..\source\PerspectiveCamera.cpp" />
+    <ClCompile Include="..\..\source\TriOrderCurve.cpp" />
+    <ClCompile Include="..\..\source\Visualizer.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\source\argparse.h" />
+    <ClInclude Include="..\..\source\BatchSilhouette.h" />
+    <ClInclude Include="..\..\source\Camera.h" />
+    <ClInclude Include="..\..\source\Display.h" />
+    <ClInclude Include="..\..\source\Geometry.h" />
+    <ClInclude Include="..\..\source\GeometryViz.h" />
+    <ClInclude Include="..\..\source\GLSL\camera.glsl.h" />
+    <ClInclude Include="..\..\source\InvocationChecker.h" />
+    <ClInclude Include="..\..\source\Navigator.h" />
+    <ClInclude Include="..\..\source\OrbitalNavigator.h" />
+    <ClInclude Include="..\..\source\PerspectiveCamera.h" />
+    <ClInclude Include="..\..\source\TriOrderCurve.h" />
+    <ClInclude Include="..\..\source\Visualizer.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <GLSL Include="..\..\source\GLSL\color.fs.glsl" />
+    <GLSL Include="..\..\source\GLSL\geometry.fs.glsl" />
+    <GLSL Include="..\..\source\GLSL\geometry.vs.glsl" />
+    <GLSL Include="..\..\source\GLSL\geometry_show_batches.fs.glsl" />
+    <GLSL Include="..\..\source\GLSL\geometry_show_invocations.vs.glsl" />
+    <GLSL Include="..\..\source\GLSL\geometry_show_order.fs.glsl" />
+    <GLSL Include="..\..\source\GLSL\geometry_vertex_color.fs.glsl" />
+    <GLSL Include="..\..\source\GLSL\invocation_counter.fs.glsl" />
+    <GLSL Include="..\..\source\GLSL\invocation_counter.gs.glsl" />
+    <GLSL Include="..\..\source\GLSL\invocation_counter.vs.glsl" />
+    <GLSL Include="..\..\source\GLSL\projected_geometry.vs.glsl" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="$(GLSL_build_tools_root)GLSL.targets" />
+  </ImportGroup>
+</Project>

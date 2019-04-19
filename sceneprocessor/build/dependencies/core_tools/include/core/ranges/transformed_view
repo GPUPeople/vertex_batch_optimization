@@ -1,0 +1,27 @@
+
+
+
+#ifndef INCLUDED_CORE_RANGES_TRANSFORMED_VIEW
+#define INCLUDED_CORE_RANGES_TRANSFORMED_VIEW
+
+#pragma once
+
+#include <utility>
+
+#include <core/iterators/transform_iterator>
+#include <core/ranges/range>
+
+
+namespace core
+{
+	namespace ranges
+	{
+		template <typename InputIterator, typename F>
+		auto transformed_view(InputIterator begin, InputIterator end, F&& f) -> range_t<core::iterators::transform_iterator<InputIterator, F>, core::iterators::transform_iterator<InputIterator, F>>
+		{
+			return { {begin, f}, {end, f} };
+		}
+	}
+}
+
+#endif  // INCLUDED_CORE_RANGES_TRANSFORMED_VIEW

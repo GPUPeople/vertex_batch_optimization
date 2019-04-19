@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\source\autotuner.cpp" />
+    <ClCompile Include="..\..\source\file_formats\binscene.cpp" />
+    <ClCompile Include="..\..\source\file_formats\candy_scene.cpp" />
+    <ClCompile Include="..\..\source\file_formats\obj.cpp" />
+    <ClCompile Include="..\..\source\file_formats\sdkmesh.cpp" />
+    <ClCompile Include="..\..\source\file_formats\tris.cpp" />
+    <ClCompile Include="..\..\source\layers\BatchEnumerator.cpp" />
+    <ClCompile Include="..\..\source\layers\BatchOptimizer.cpp" />
+    <ClCompile Include="..\..\source\layers\GBatchOptimizer.cpp" />
+    <ClCompile Include="..\..\source\layers\HoppeOptimizer.cpp" />
+    <ClCompile Include="..\..\source\layers\LinYuOptimizer.cpp" />
+    <ClCompile Include="..\..\source\layers\ModifiedTomFOptimizer.cpp" />
+    <ClCompile Include="..\..\source\layers\Randi.cpp" />
+    <ClCompile Include="..\..\source\layers\TipsifyOptimizer.cpp" />
+    <ClCompile Include="..\..\source\layers\TomFOptimizer.cpp" />
+    <ClCompile Include="..\..\source\layers\VertexCacheSimulation.cpp" />
+    <ClCompile Include="..\..\source\layers\VertexReuseStats.cpp" />
+    <ClCompile Include="..\..\source\layers\WeldVertices.cpp" />
+    <ClCompile Include="..\..\source\layers\WindingOrderFlip.cpp" />
+    <ClCompile Include="..\..\source\layers\ZFlip.cpp" />
+    <ClCompile Include="..\..\source\Scene.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\source\file_formats\binscene.h" />
+    <ClInclude Include="..\..\source\file_formats\candy_scene.h" />
+    <ClInclude Include="..\..\source\file_formats\obj.h" />
+    <ClInclude Include="..\..\source\file_formats\sdkmesh.h" />
+    <ClInclude Include="..\..\source\file_formats\tris.h" />
+    <ClInclude Include="..\..\source\io.h" />
+    <ClInclude Include="..\..\source\layers\BatchEnumerator.h" />
+    <ClInclude Include="..\..\source\layers\BatchOptimizer.h" />
+    <ClInclude Include="..\..\source\layers\GBatchOptimizer.h" />
+    <ClInclude Include="..\..\source\layers\HoppeOptimizer.h" />
+    <ClInclude Include="..\..\source\layers\LinYuOptimizer.h" />
+    <ClInclude Include="..\..\source\layers\ModifiedTomFOptimizer.h" />
+    <ClInclude Include="..\..\source\layers\Randi.h" />
+    <ClInclude Include="..\..\source\layers\TipsifyOptimizer.h" />
+    <ClInclude Include="..\..\source\layers\TomFOptimizer.h" />
+    <ClInclude Include="..\..\source\layers\VertexCacheSimulation.h" />
+    <ClInclude Include="..\..\source\layers\VertexReuseStats.h" />
+    <ClInclude Include="..\..\source\layers\WeldVertices.h" />
+    <ClInclude Include="..\..\source\layers\WindingOrderFlip.h" />
+    <ClInclude Include="..\..\source\layers\ZFlip.h" />
+    <ClInclude Include="..\..\source\ProcessingLayer.h" />
+    <ClInclude Include="..\..\source\Scene.h" />
+    <ClInclude Include="..\..\source\SceneBuilder.h" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{5907F70E-8A24-49E2-9AAA-2DBDD3DEFFC2}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>sceneprocessor</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup>
+    <Import Project="..\dependencies\dependencies.props" />
+  </ImportGroup>
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup>
+    <Import Project="$(core_tools_root)build\vs2017\core_tools.props" Condition="'$(core_tools)' == ''" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)bin\$(Platform)\$(Configuration)\</OutDir>
+    <IncludePath>$(boost_root);$(tootle_root)src\TootleLib\include;$(directxmesh_root);$(IncludePath)</IncludePath>
+    <IntDir>$(ProjectDir)build\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)bin\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(ProjectDir)build\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
+    <IncludePath>$(boost_root);$(tootle_root)src\TootleLib\include;$(directxmesh_root);$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>USE_BOOST;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;_SILENCE_CXX17_OLD_ALLOCATOR_MEMBERS_DEPRECATION_WARNING;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MinimalRebuild>false</MinimalRebuild>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>$(tootle_root)build\vs2017\lib\TootleLibD.lib;$(directxmesh_root)\DirectXMesh\Bin\Desktop_2017_Win10\x64\Debug\DirectXMesh.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent />
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>USE_BOOST;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;_SILENCE_CXX17_OLD_ALLOCATOR_MEMBERS_DEPRECATION_WARNING;WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>$(tootle_root)build\vs2017\lib\TootleLib.lib;$(directxmesh_root)\DirectXMesh\Bin\Desktop_2017_Win10\x64\Release\DirectXMesh.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent />
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

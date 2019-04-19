@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<PropertyGroup>
+		<dependencies>$(MSBuildThisFileDirectory)</dependencies>
+		<directxmesh_root>$(dependencies)directxmesh\</directxmesh_root>
+		<core_tools_root>$(dependencies)core_tools\</core_tools_root>
+		<boost_root>$(dependencies)boost\</boost_root>
+		<tootle_root>$(dependencies)tootle\</tootle_root>
+	</PropertyGroup>
+</Project>
